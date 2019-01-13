@@ -1,0 +1,80 @@
+.onePersonWrapper, a {
+  @include flexbox;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  width: calc(100vw / 5 - 10vw);
+  height: calc($height-main / 5 - 10vw);
+  margin: 0 1.8% 0 1.8%;
+  text-decoration: none;
+
+  .onePersonWrapper:nth-child(5n+1) {
+    margin-left: 0;
+  }
+
+  .onePersonWrapper:nth-child(5n+5) {
+    margin-right: 0;
+  }
+
+  .onePerson {
+    @include flexbox;
+    flex-basis: 100%;
+    align-items: flex-end;
+    height: calc(100vw / 5 - 10vw);
+    border-radius: 50%;
+    background-color: rgba($blue-color, 1);
+    &:hover {
+      background-color: rgba($blue-color, 0.3);
+      cursor: pointer;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      opacity: 0.5;
+    }
+    .iconWrapper {
+      @include flexbox;
+      position: absolute;
+      width: 2.2vw;
+      height: 2.2vw;
+      background-color: $violet-color;
+      border-radius: 50%;
+      top: 1vw;
+      left: 7.5vw;
+
+      span {
+        color: $white-color;
+        size: 1.5vw;
+      }
+    }
+
+  }
+
+  .personDetails {
+    align-self: flex-end;
+    text-align: center;
+    flex-basis: 100%;
+    height: 30%;
+    font-weight: $font-weight-primary;
+
+    span:first-of-type {
+      display: block;
+      color: $violet-color;
+      width: 100%;
+      font-size: 1.1em;
+      padding: 0.8em 0 0.8em 0;
+    }
+    span:nth-of-type(2) {
+      display: block;
+      color: $blue-color;
+      width: 100%;
+      font-size: 0.85em;
+    }
+    span:last-of-type {
+      color: $dimgrey-color;
+      font-size: 0.8em;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.peopleWrapper {
+  @include flexbox;
+  flex-wrap: wrap;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../images/bg.png');
+  height: $height-main;
+  width: 100vw;
+  padding: 0 17% 0 17%;
+  overflow: hidden;
+  header {
+    @include flexbox;
+    flex-basis: 100%;
+    height: 18%;
+    color: $violet-color;
+    font-size: 3em;
+    font-weight: $font-weight-primary+400;
+    animation: bounce 2s ease-in-out;
+  }
+
+  .people {
+    @include flexbox;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    height: 74%;
+    margin-bottom: 4%;
+    font-weight: $font-weight-primary;
+  }
+}

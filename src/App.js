@@ -1,28 +1,32 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import SlidePeople from './components/slidePeople';
+import PersonDetailsSummary from './components/personDetailsSummary';
+import './scss/App.scss';
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {faEnvelope, faTimes,faChevronLeft} from '@fortawesome/free-solid-svg-icons';
+import {BrowserRouter, Route} from "react-router-dom";
+import { AnimatedSwitch } from 'react-router-transition';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+library.add(faEnvelope);
+library.add(faTimes);
+library.add(faChevronLeft);
+
+//main component with router
+const App=()=> {
+        return (
+            <BrowserRouter>
+                <div>
+                    <AnimatedSwitch
+                        atEnter={{ opacity: 0 }}
+                        atLeave={{ opacity: 0.7 }}
+                        atActive={{ opacity: 1 }}
+                        className="switch-wrapper">
+                    <Route exact path='/' component={SlidePeople}/>
+                    <Route path='/person/:id' component={PersonDetailsSummary}/>
+                    </AnimatedSwitch>
+                </div>
+            </BrowserRouter>
+        );
+};
 
 export default App;
