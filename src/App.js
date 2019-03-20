@@ -14,7 +14,7 @@ library.add(faChevronLeft);
 //main component with router
 const App=()=> {
         return (
-            <BrowserRouter>
+            <BrowserRouter basename={'/slider'}>
                 <div>
                     <AnimatedSwitch
                         atEnter={{ opacity: 0 }}
